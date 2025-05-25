@@ -1,5 +1,5 @@
 
-import { TabsTrigger } from "@/components/ui/tabs";
+import { TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Category {
   name: string;
@@ -14,7 +14,7 @@ interface CategoryFiltersProps {
 
 const CategoryFilters = ({ categories }: CategoryFiltersProps) => {
   return (
-    <div className="flex flex-wrap gap-2 mb-6">
+    <TabsList className="flex flex-wrap gap-2 mb-6 h-auto bg-transparent p-0">
       {categories.map((category) => (
         <TabsTrigger 
           key={category.value}
@@ -25,7 +25,7 @@ const CategoryFilters = ({ categories }: CategoryFiltersProps) => {
           {category.name} ({category.count})
         </TabsTrigger>
       ))}
-    </div>
+    </TabsList>
   );
 };
 
